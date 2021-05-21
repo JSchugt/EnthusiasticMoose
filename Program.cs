@@ -1,5 +1,28 @@
 ﻿using System;
-//================== functions
+
+string[,] mooseQuestions = {
+    { "Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T !!!" },
+    {"Are you enthusiastic?","Yay!","You should try it!"},
+    {"Do you love C# yet?","Good job sucking up to your instructor!","You will...oh, yes, you will..."},
+    {"Do you want to know a secret?","ME TOO!!!! I love secrets...tell me one!","Oh, no...secrets are the best, I love to share them!"}
+};
+Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
+Console.WriteLine("--------------------------------------------");
+Console.WriteLine();
+MooseSays("H I, I'M  E N T H U S I A S T I C !");
+MooseSays("I really am enthusiastic");
+for (int i = 0; i < mooseQuestions.Length / 3; i++)
+{
+    if (MooseAsks(mooseQuestions[i, 0]))
+    {
+        MooseSays(mooseQuestions[i, 1]);
+    }
+    else
+    {
+        MooseSays(mooseQuestions[i, 2]);
+    }
+}
+
 void MooseSays(string message)
 {
     Console.WriteLine($@"
@@ -52,12 +75,4 @@ bool MooseAsks(string question)
         return false;
     }
 }
-//====================================
-Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
-Console.WriteLine("--------------------------------------------");
-Console.WriteLine();
-MooseSays("H I, I'M  E N T H U S I A S T I C !");
-MooseSays("I really am enthusiastic");
-string question = "is canada real?";
-bool isTrue = MooseAsks(question);
-Console.WriteLine(isTrue);
+
